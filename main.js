@@ -16,3 +16,16 @@ const banks = [
         loanTerm: 50,
     },
 ];
+
+const divRoot = document.getElementById('root');
+
+
+const banksListContainerEl = document.createElement("div");
+banksListContainerEl.classList.add("banksListContainer");
+
+const itemBankContainerEl = document.createElement("div");
+itemBankContainerEl.classList.add("itemBankContainer");
+
+divRoot.append(banksListContainerEl , itemBankContainerEl);
+
+const asd = 1;
