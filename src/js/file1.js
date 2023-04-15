@@ -32,7 +32,7 @@ function renderBankList(banks) {
 
     banksListContainerEl.append(bankList);
     bankList.classList.add("bankList");
-    
+
     const bankItems = banks.map(
         (bank) => `
         <li class='bankItems'>
@@ -43,9 +43,9 @@ function renderBankList(banks) {
             </div>
         </li>`
     );
-    
+
     // console.log(bankItems);
-    
+
     bankList.insertAdjacentHTML("beforeend", bankItems.join(" "));
     renderNewBankButton();
 
