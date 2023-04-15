@@ -43,7 +43,19 @@ function renderBankList(banks) {
   console.log(bankItems);
   bankList.insertAdjacentHTML("beforeend", bankItems.join(" "));
   renderNewBankButton();
+
+  document.querySelectorAll('.bankItems').forEach(element => {
+    // console.log(element);
+    element.addEventListener('click', () => {
+      // console.dir(element.firstElementChild.textContent);
+      console.log(findBankByName(element.firstElementChild.textContent, banks));
+    })
+  });
 }
+  const findBankByName = (bankName, banks) => {
+  return banks.find(bank => bank.name === bankName)
+  };
+
 
 renderBankList(banks);
 
@@ -52,3 +64,4 @@ function renderNewBankButton() {
   addBankBtn.textContent = "Add bank";
   banksListContainerEl.append(addBankBtn);
 }
+
