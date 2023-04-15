@@ -1,0 +1,25 @@
+:root {}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+
+
+}
+
+.banksListContainer {
+    border: solid 1px tomato;
+    width: 50%;
+    height: 100px;
+    background-color: bisque;
+}
+
+
+.itemBankContainer {
+    border: solid 1px lime;
+    width: 50%;
+    height: 100px;
+    background-color: bisque;
+}
