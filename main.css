@@ -1,25 +1,44 @@
-:root {}
+:root {
+}
 
 #root {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    gap: 20px;
-
-
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+}
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 .banksListContainer {
-    border: solid 1px tomato;
-    width: 50%;
-    height: 100px;
-    background-color: bisque;
+  border: solid 1px tomato;
+  width: 30%;
+  height: auto;
+  background-color: bisque;
+  padding: 10px;
 }
 
-
 .itemBankContainer {
-    border: solid 1px lime;
-    width: 50%;
-    height: 100px;
-    background-color: bisque;
+  border: solid 1px lime;
+  width: 70%;
+  height: auto;
+  background-color: bisque;
+}
+
+.bank-items-btn {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.bankItems {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+  background-color: rgb(120, 133, 108);
+  padding: 10px;
+  align-items: center;
 }
