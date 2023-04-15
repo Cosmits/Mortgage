@@ -28,3 +28,4 @@ itemBankContainerEl.classList.add("itemBankContainer");
 
 divRoot.append(banksListContainerEl , itemBankContainerEl);
 
+const asd = 1;
