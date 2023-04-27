@@ -38,8 +38,16 @@ function renderBankList(banks) {
         <li class='bankItems'>
             <p>${bank.name}</p>
             <div class="bank-btn-wrap">
-                <button type="button" class="bank-items-btn">Edit</button>
-                <button type="button" class="bank-items-btn">Delete</button>
+                <button type="button" class="bank-items-btn">Edit
+                <svg class="bank-icon"  width="24" height="20">
+                <use href="./img/javascript.svg#icon-library" width= "24" height="20"></use>
+                </svg>
+                </button>
+                <button type="button" class="bank-items-btn">Delete
+                 <svg class="bank-icon"  width="24" height="20">
+                <use href="./img/javascript.svg#icon-bin2" width="24" height="20"></use>
+                 </svg>
+                </button>
             </div>
         </li>`
     );
