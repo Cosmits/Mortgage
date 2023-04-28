@@ -74,24 +74,30 @@ const findBankByName = (bankName, banks) => {
 
 function renderNewBankButton() {
     const addBankBtn = document.createElement("button");
-    const addBankSvg = document.createElement('svg')
-    const addBankUse = document.createElement('use')
+    // const addBankSvg = document.createElement('svg')
+    // const addBankUse = document.createElement('use')
     
-    addBankSvg.setAttribute("class", "bank-icon");
-    addBankSvg.setAttribute("width", "24");
-    addBankSvg.setAttribute("height", "24");
+    //addBankSvg.setAttribute("class", "bank-icon");
+    // addBankSvg.setAttribute("width", "24");
+    // addBankSvg.setAttribute("height", "24");
 
-    addBankUse.setAttribute("href", "./img/javascript.svg#icon-cross");
-    addBankUse.setAttribute("width", "24");
-    addBankUse.setAttribute("height", "24");
-    
+    // addBankUse.setAttribute("href", "./img/javascript.svg#icon-cross");
+    // addBankUse.setAttribute("width", "24");
+    // addBankUse.setAttribute("height", "24");
+    let svgIcon = `
+        <svg class="bank-icon"  width="24" height="24">
+            <use href="./img/javascript.svg#icon-library" width="24" height="24"></use>
+        </svg>` ;
+
     addBankBtn.insertAdjacentHTML("afterbegin", "<p>Add bank</p>");
     addBankBtn.setAttribute("class", "bank-items-btn");
     addBankBtn.setAttribute("type", "button");
 
+    addBankBtn.insertAdjacentHTML("beforeend", svgIcon);
+
     
-    addBankSvg.appendChild(addBankUse);
-    addBankBtn.appendChild(addBankSvg);
+    // addBankSvg.appendChild(addBankUse);
+    // addBankBtn.appendChild(addBankSvg);
     banksListContainerEl.append(addBankBtn);
 }
 
