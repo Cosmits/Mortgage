@@ -53,8 +53,10 @@
 }
 
 .bank-items-btn {
-  width: 90px;
-  position: relative;
+  display: flex;
+  gap: 10px;
+  /* width: 90px; */
+  /* position: relative; */
   font-size: 10px;
   padding: 10px 15px;
   cursor: pointer;
@@ -99,9 +101,13 @@
 }
 
 .bank-icon {
-  position: absolute;
-  top: 50%;
+  width: 23px;
+  height: 20 ;
+  /* position: absolute; */
+  /* top: 50%;
   right: 15px;
-  transform: translateY(-50%);
-  background-color: burlywood;
+  transform: translateY(-50%); */
+   fill:rgb(51, 38, 97)
+   
 }
+

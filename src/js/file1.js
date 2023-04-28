@@ -39,13 +39,13 @@ function renderBankList(banks) {
             <p>${bank.name}</p>
             <div class="bank-btn-wrap">
                 <button type="button" class="bank-items-btn">Edit
-                <svg class="bank-icon"  width="24" height="20">
-                <use href="./img/javascript.svg#icon-library" width= "24" height="20"></use>
+                <svg class="bank-icon"  width="23" height="20">
+                <use href="./img/javascript.svg#icon-pencil" width= "23" height="20"></use>
                 </svg>
                 </button>
                 <button type="button" class="bank-items-btn">Delete
                  <svg class="bank-icon"  width="24" height="20">
-                <use href="./img/javascript.svg#icon-bin2" width="24" height="20"></use>
+                <use href="./img/javascript.svg#icon-bin2" width="24" height="22"></use>
                  </svg>
                 </button>
             </div>
@@ -72,8 +72,13 @@ const findBankByName = (bankName, banks) => {
 
 function renderNewBankButton() {
     const addBankBtn = document.createElement("button");
-
+const addBankSvg =  document.createElement('svg')
+ const addBankUse =  document.createElement('use')
+addBankSvg.setAttribute("class", "bank-icon");
+addBankUse.setAttribute("href", "./img/javascript.svg#icon-cross");
     addBankBtn.textContent = "Add bank";
+    addBankSvg.appendChild(addBankUse);
+    addBankBtn.appendChild(addBankSvg);
     banksListContainerEl.append(addBankBtn);
 }
 
