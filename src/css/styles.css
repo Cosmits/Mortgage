@@ -65,6 +65,19 @@
   text-shadow: 0 10px 10px var(--shadow-color);
 }
 
+.bank-add-btn {
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: var(--main-background-color);
+  border-radius: 4px;
+  font-size: 20px;
+  box-shadow: 5px 5px 5px var(--shadow-color);
+  border: none;
+  letter-spacing: 4px;
+  color: var(--text-color);
+  text-shadow: 0 10px 10px var(--shadow-color);
+}
+
 
 .bankItems {
   list-style: none;
