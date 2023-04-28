@@ -53,6 +53,9 @@
 }
 
 .bank-items-btn {
+  width: 90px;
+  position: relative;
+  font-size: 10px;
   padding: 10px 15px;
   cursor: pointer;
   background-color: var(--main-background-color);
@@ -88,10 +91,17 @@
   background-color: var(--items-background-color);
   padding: 10px;
   align-items: center;
-  border: none;  
-  font-size: 20px;
-  letter-spacing: 2px;
-  color: var(--text-color);  
-
 }
 
+.bank-btn-wrap {
+  display: flex;
+  gap: 10px;
+}
+
+.bank-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  background-color: burlywood;
+}
