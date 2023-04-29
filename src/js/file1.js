@@ -1,41 +1,43 @@
+import { findBankById } from '../utils/findBankById';
+import bankInformation from '../utils/bankInfoMarkup';
+
 const banks = [
-    {
-        id: "435tr34wrt",
-        name: "Mono",
-        interestRate: 5,
-        maxLoan: 500000,
-        minPayment: 1000,
-        loanTerm: 12,
-    },
-    {
-        id: "asdfw342rew5",
-        name: "Privat",
-        interestRate: 7,
-        maxLoan: 1000000,
-        minPayment: 5000,
-        loanTerm: 50,
-    },
+  {
+    id: '435tr34wrt',
+    name: 'Mono',
+    interestRate: 5,
+    maxLoan: 500000,
+    minPayment: 1000,
+    loanTerm: 12,
+  },
+  {
+    id: 'asdfw342rew5',
+    name: 'Privat',
+    interestRate: 7,
+    maxLoan: 1000000,
+    minPayment: 5000,
+    loanTerm: 50,
+  },
 ];
 
-const divRoot = document.getElementById("root");
+const divRoot = document.getElementById('root');
 
-const banksListContainerEl = document.createElement("div");
-banksListContainerEl.classList.add("banksListContainer");
+const banksListContainerEl = document.createElement('div');
+banksListContainerEl.classList.add('banksListContainer');
 
-const itemBankContainerEl = document.createElement("div");
-itemBankContainerEl.classList.add("itemBankContainer");
+const itemBankContainerEl = document.createElement('div');
+itemBankContainerEl.classList.add('itemBankContainer');
 
 divRoot.append(banksListContainerEl, itemBankContainerEl);
 
+const bankList = document.createElement('ul');
+banksListContainerEl.append(bankList);
+bankList.classList.add('bankList');
+
 function renderBankList(banks) {
-    const bankList = document.createElement("ul");
-
-    banksListContainerEl.append(bankList);
-    bankList.classList.add("bankList");
-
-    const bankItems = banks.map(
-        (bank) => `
-        <li class='bankItems'>
+  const bankItems = banks.map(
+    bank => `
+        <li class='bankItems' data-id="${bank.id}">
             <p>${bank.name}</p>
             <div class="bank-btn-wrap">
                 <button type="button" class="bank-items-btn">
@@ -52,53 +54,55 @@ function renderBankList(banks) {
                 </button>
             </div>
         </li>`
-    );
+  );
 
-    // console.log(bankItems);
+  // console.log(bankItems);
 
-    bankList.insertAdjacentHTML("beforeend", bankItems.join(" "));
-    renderNewBankButton();
+  bankList.insertAdjacentHTML('beforeend', bankItems.join(' '));
+  renderNewBankButton();
 
-    document.querySelectorAll('.bankItems').forEach(element => {
-        // console.log(element);
-        element.addEventListener('click', () => {
-            // console.dir(element.firstElementChild.textContent);
-            console.log(findBankByName(element.firstElementChild.textContent, banks));
-        })
-    });
+  // document.querySelectorAll('.bankItems').forEach(element => {
+  //     // console.log(element);
+  //     element.addEventListener('click', () => {
+  //         // console.dir(element.firstElementChild.textContent);
+  //         console.log(findBankByName(element.firstElementChild.textContent, banks));
+  //     })
+  // });
 }
 
-const findBankByName = (bankName, banks) => {
-    return banks.find(bank => bank.name === bankName)
-};
+bankList.addEventListener('click', e => {
+  if (e.target.nodeName === 'UL') return;
+  const id = e.target.closest('.bankItems').dataset.id;
+  renderBankInfo(findBankById(id, banks));
+});
+ 
+function renderBankInfo(bank) {
+    const markup = bankInformation(bank)
+    const itemBankContainer = document.querySelector('.itemBankContainer')
+    itemBankContainer.innerHTML = markup;
+}
+
 
 function renderNewBankButton() {
-    const addBankBtn = document.createElement("button");
-    // const addBankSvg = document.createElement('svg')
-    // const addBankUse = document.createElement('use')
-    
-    //addBankSvg.setAttribute("class", "bank-icon");
-    // addBankSvg.setAttribute("width", "24");
-    // addBankSvg.setAttribute("height", "24");
+  const addBankBtn = document.createElement('button');
 
-    // addBankUse.setAttribute("href", "./img/javascript.svg#icon-cross");
-    // addBankUse.setAttribute("width", "24");
-    // addBankUse.setAttribute("height", "24");
-    let svgIcon = `
+  let svgIcon = `
         <svg class="bank-icon"  width="24" height="24">
             <use href="./img/javascript.svg#icon-library" width="24" height="24"></use>
-        </svg>` ;
+        </svg>`;
 
-    addBankBtn.insertAdjacentHTML("afterbegin", "<p>Add bank</p>");
-    addBankBtn.setAttribute("class", "bank-items-btn");
-    addBankBtn.setAttribute("type", "button");
+  addBankBtn.insertAdjacentHTML('afterbegin', '<p>Add bank</p>');
+  addBankBtn.setAttribute('class', 'bank-items-btn');
+  addBankBtn.setAttribute('type', 'button');
 
-    addBankBtn.insertAdjacentHTML("beforeend", svgIcon);
+  addBankBtn.insertAdjacentHTML('beforeend', svgIcon);
 
-    
-    // addBankSvg.appendChild(addBankUse);
-    // addBankBtn.appendChild(addBankSvg);
-    banksListContainerEl.append(addBankBtn);
+  // addBankSvg.appendChild(addBankUse);
+  // addBankBtn.appendChild(addBankSvg);
+  banksListContainerEl.append(addBankBtn);
 }
 
 renderBankList(banks);
+
+// При клікові на кожну з назв банку в лівому блоці  - спочатку в консоль вивести назву вибраного банка в текстовому форматі.
+// Якщо все ок - вивести в консоль уже сам об'єкт вибраного банку.
