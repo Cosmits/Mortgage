@@ -1,5 +1,3 @@
-import renderNewBankButton from './renderNewBankButton'
-
 function renderBankList(banks, refs) {
   const bankItems = banks.map(
     bank => `
@@ -23,7 +21,7 @@ function renderBankList(banks, refs) {
   );
 
   refs.bankList.insertAdjacentHTML('beforeend', bankItems.join(' '));
-  renderNewBankButton(refs);
+
 }
 
 export default renderBankList;
