@@ -106,3 +106,19 @@ renderBankList(banks);
 
 // При клікові на кожну з назв банку в лівому блоці  - спочатку в консоль вивести назву вибраного банка в текстовому форматі.
 // Якщо все ок - вивести в консоль уже сам об'єкт вибраного банку.
+
+
+
+
+// M5 Додати слухачі на кнопки Edit та Delete і вивести в консоль назву кнопки по якій клікаэмо. Наприклад, "Edit", "Delete"
+
+const buttons = document.querySelectorAll('.bank-items-btn');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', (event) => {
+    console.log(event.target.textContent);
+  });
+});
+
+
+
