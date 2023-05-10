@@ -8,7 +8,13 @@ function onClickBankUL(e) {
   if (e.target.nodeName === 'UL') return;
 
   const buttonName = e.target.textContent.toLowerCase();
-  if (buttonName.includes('edit') || buttonName.includes('delete')) {
+  if (buttonName.includes('edit')) {
+    //add code to edit
+    console.log(buttonName);
+  }
+
+  if (buttonName.includes('delete')) {
+    //add code to delete
     console.log(buttonName);
   }
 
