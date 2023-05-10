@@ -11,7 +11,6 @@ function onClickBankUL(e) {
   if (buttonName.includes('edit') || buttonName.includes('delete')) {
     console.log(buttonName);
   }
-  if (e.target.nodeName === 'UL') return;
 
   const id = e.target.closest('.bankItems').dataset.id;
   renderBankInfo(findBankById(id, banks), refs);
