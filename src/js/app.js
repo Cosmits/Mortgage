@@ -2,10 +2,11 @@ import debounce from 'lodash.debounce';
 
 import renderBankList from './utils/renderBankList';
 import renderInputFindBank from './utils/renderInputFindBank';
-import renderNewBankButton from './utils/renderNewBankButton'
+import renderNewBankButton from './utils/renderNewBankButton';
 
-import onClickBankUL from './listeners/onClickBankUL'
+import onClickBankUL from './listeners/onClickBankUL';
 import onSearchBankByName from './listeners/onSearchBankByName';
+import { editButton } from './utils/editButton';
 
 // data models
 import { banks } from './models/banks';
@@ -27,4 +28,9 @@ renderInputFindBank(banks, refs);
 
 // обробка clicks та inputs
 refs.bankList.addEventListener('click', onClickBankUL);
-refs.inputForFindBank.addEventListener('input', debounce(onSearchBankByName, 500));
+refs.inputForFindBank.addEventListener(
+  'input',
+  debounce(onSearchBankByName, 500)
+);
+
+refs.bankList.addEventListener('click', editButton);
