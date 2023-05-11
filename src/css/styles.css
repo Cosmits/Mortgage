@@ -20,7 +20,6 @@
   --shadow-color: black;
   --main-background-color: rgb(172, 168, 194);
 
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -82,7 +81,6 @@
   text-shadow: 0 10px 10px var(--shadow-color);
 }
 
-
 .bankItems {
   list-style: none;
   display: flex;
@@ -102,7 +100,7 @@
 }
 
 .bank-icon {
-  fill: rgb(51, 38, 97)
+  fill: rgb(51, 38, 97);
 }
 
 .js-inputForFindBank {
@@ -115,6 +113,21 @@
 .bank-items{
   padding: 10px 56px;
   margin-top: 10px;
+  cursor: pointer;
+  background-color: var(--main-background-color);
+  border-radius: 4px;
+  font-size: 20px;
+  box-shadow: 5px 5px 5px var(--shadow-color);
+  border: none;
+  letter-spacing: 4px;
+  color: var(--text-color);
+  text-shadow: 0 10px 10px var(--shadow-color);
+}
+
+.changeBtn {
+  padding: 10px 15px;
+  margin-left: 10px;
+  margin-top: 5px;
   cursor: pointer;
   background-color: var(--main-background-color);
   border-radius: 4px;

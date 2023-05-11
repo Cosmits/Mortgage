@@ -8,6 +8,7 @@ import getClearBankList from './utils/getClearBankList';
 import onClearButtonClick from './utils/onClearBtnClick';
 import onClickBankUL from './listeners/onClickBankUL'
 import onSearchBankByName from './listeners/onSearchBankByName';
+import { editButton } from './utils/editButton';
 
 // data models
 import { banks } from './models/banks';
@@ -33,7 +34,12 @@ getClearBankList( refs)
 
 // обробка clicks та inputs
 refs.bankList.addEventListener('click', onClickBankUL);
-refs.inputForFindBank.addEventListener('input', debounce(onSearchBankByName, 500));
+refs.inputForFindBank.addEventListener(
+  'input',
+  debounce(onSearchBankByName, 500)
+);
+
+refs.bankList.addEventListener('click', editButton);
 
 refs.clearBankBtn.addEventListener('click', () => {
     onClearButtonClick(refs);
