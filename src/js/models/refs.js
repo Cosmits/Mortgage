@@ -7,6 +7,6 @@ export const refs = {
   bankList: document.createElement('ul'),
   
   addBankBtn: document.createElement('button'),
-  
+  clearBankBtn: document.createElement('button'),
   inputForFindBank: document.createElement('input'),
 };
