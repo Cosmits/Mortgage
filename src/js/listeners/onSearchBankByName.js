@@ -2,7 +2,7 @@ import { banks } from '../models/banks';
 import { refs } from '../models/refs';
 
 import { findBankByName } from '../utils/findBankById';
-import renderBankList from '../utils/renderBankList';
+import renderBankList from '../markups/renderBankList';
 
 
 function onSearchBankByName(event) {
@@ -21,7 +21,5 @@ function onSearchBankByName(event) {
   renderBankList(arr, refs);
 
 }
-
-
 
 export default onSearchBankByName;

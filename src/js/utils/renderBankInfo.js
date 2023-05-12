@@ -1,4 +1,4 @@
-import bankInformation from './bankInfoMarkup';
+import bankInformation from '../markups/bankInfoMarkup';
 
 function renderBankInfo(bank, refs) {
   const markup = bankInformation(bank);
