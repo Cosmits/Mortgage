@@ -32,11 +32,11 @@
   justify-content: center;
   align-content: center;
   gap: 20px;
-
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
-.banksListContainer, .bank-info {
+.banksListContainer,
+.bank-info {
   height: auto;
   padding: 10px;
 
@@ -84,7 +84,8 @@
   text-shadow: 0 10px 10px var(--shadow-color);
 }
 
-.bankItems, .bank-info-tex {
+.bankItems,
+.bank-info-tex {
   list-style: none;
 
   display: flex;
