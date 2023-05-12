@@ -32,22 +32,24 @@
   justify-content: center;
   align-content: center;
   gap: 20px;
+
+  flex-direction: column;
 }
 
-.banksListContainer {
+.banksListContainer, .bank-info {
+  height: auto;
+  padding: 10px;
+
   border: solid 1px var(--border-color);
   border-radius: 4px;
-  /* width: 30%; */
-  height: auto;
   background-color: var(--main-color);
-  padding: 10px;
+
 }
 
 .itemBankContainer {
-  border: solid 1px var(--border-color);
-  flex-grow: 1;
-  /* width: 70%; */
   height: auto;
+
+  border: solid 1px var(--border-color);
   background-color: var(--main-color);
   border-radius: 4px;
 }
@@ -55,8 +57,9 @@
 .bank-items-btn {
   display: flex;
   gap: 10px;
-  font-size: 10px;
   padding: 10px 15px;
+
+  font-size: 10px;
   cursor: pointer;
   background-color: var(--main-background-color);
   border-radius: 4px;
@@ -81,22 +84,25 @@
   text-shadow: 0 10px 10px var(--shadow-color);
 }
 
-.bankItems {
+.bankItems, .bank-info-tex {
   list-style: none;
+
   display: flex;
   gap: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+
   font-size: 20px;
   justify-content: space-between;
   border-radius: 4px;
-  margin-bottom: 10px;
   background-color: var(--items-background-color);
-  padding: 10px;
   align-items: center;
 }
 
 .bank-btn-wrap {
   display: flex;
   gap: 10px;
+  justify-content: space-between;
 }
 
 .bank-icon {
@@ -104,13 +110,14 @@
 }
 
 .js-inputForFindBank {
-  min-width: 406px;
+  min-width: 88vw;
 }
 
-.hidden{
-   display: none; 
+.hidden {
+  display: none;
 }
-.bank-items{
+
+.bank-items {
   padding: 10px 56px;
   margin-top: 10px;
   cursor: pointer;
@@ -137,4 +144,20 @@
   letter-spacing: 4px;
   color: var(--text-color);
   text-shadow: 0 10px 10px var(--shadow-color);
+}
+
+
+@media screen and (min-width: 475px) {
+  #root {
+    flex-direction: row;
+  }
+
+  .itemBankContainer {
+    flex-grow: 1;
+  }
+
+  .js-inputForFindBank {
+    min-width: 406px;
+  }
+
 }

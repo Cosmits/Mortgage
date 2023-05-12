@@ -1,12 +1,15 @@
-import { banks } from './../models/banks';
-import { refs } from './../models/refs';
+import { banks } from '../models/banks';
+import { refs } from '../models/refs';
+
 import { findBankById } from './findBankById';
-import renderBankList from './renderBankList';
+import renderBankList from '../markups/renderBankList';
 import renderBankInfo from './renderBankInfo';
+import { setLocalStorage, getLocalStorage } from './localStorage';
 
 let bank = {};
 let id = '';
-function editButton(event) {
+
+function onEditButton(event) {
   id = event.target.closest('.bankItems').dataset.id;
   bank = findBankById(id, banks);
   if (
@@ -50,23 +53,25 @@ function changeBankInfo(event) {
   ) {
     const keyFromId = buttonLink.getAttribute('id');
     let newData = prompt('Введіть нове значення');
-    if (newData === null) {
-      return;
-    }
+    if (newData === null) return
+
     if (keyFromId !== 'name') {
       newData = Number(newData);
     }
     bank[keyFromId] = newData;
     renderBankInfo(bank, refs);
     bankInfoListener();
+
   } else if (event.target.innerText === 'SAVE') {
     banks.splice(banks.indexOf(bank), 1, bank);
     refs.bankList.textContent = '';
     refs.itemBankContainerEl.textContent = '';
     renderBankList(banks, refs);
+    setLocalStorage('Banks', banks);
+
   } else if (event.target.innerText === 'EXIT') {
     renderBankInfo(bank, refs);
   }
 }
 
-export { editButton };
+export { onEditButton };
