@@ -20,7 +20,8 @@ function renderBankList(banks, refs) {
         </li>`
   );
 
-  refs.bankList.insertAdjacentHTML('beforeend', bankItems.join(' '));
+  // refs.bankList.insertAdjacentHTML('beforeend', bankItems.join(' '));
+  refs.bankList.innerHTML = bankItems.join(' ');
 
 }
 
