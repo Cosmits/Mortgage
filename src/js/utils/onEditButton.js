@@ -4,18 +4,18 @@ import { refs } from '../models/refs';
 import { findBankById } from './findBankById';
 import renderBankList from '../markups/renderBankList';
 import renderBankInfo from './renderBankInfo';
-import { setLocalStorage, getLocalStorage } from './localStorage';
+import { setLocalStorage } from './localStorage';
 
 let bank = {};
 let id = '';
 
 function onEditButton(event) {
-  id = event.target.closest('.bankItems').dataset.id;
-  bank = findBankById(id, banks);
   if (
     event.target.closest('.bank-items-btn') !== null &&
     event.target.closest('.bank-items-btn').innerText === 'Edit'
   ) {
+    id = event.target.closest('.bankItems').dataset.id;
+    bank = { ...findBankById(id, banks) };
     bankInfoListener();
   }
 }
@@ -53,25 +53,27 @@ function changeBankInfo(event) {
   ) {
     const keyFromId = buttonLink.getAttribute('id');
     let newData = prompt('Введіть нове значення');
-    if (newData === null) return
+    
+    if (newData === null || newData === '') return; 
+    if (keyFromId !== 'name') newData = Number(newData);
 
-    if (keyFromId !== 'name') {
-      newData = Number(newData);
-    }
     bank[keyFromId] = newData;
     renderBankInfo(bank, refs);
     bankInfoListener();
 
   } else if (event.target.innerText === 'SAVE') {
-    banks.splice(banks.indexOf(bank), 1, bank);
-    refs.bankList.textContent = '';
-    refs.itemBankContainerEl.textContent = '';
+    
+    banks.splice(banks.indexOf(findBankById(id, banks)), 1, bank);
+    refs.bankList.innerHTML = '';
+    refs.itemBankContainerEl.innerHTML = '';
     renderBankList(banks, refs);
     setLocalStorage('Banks', banks);
 
   } else if (event.target.innerText === 'EXIT') {
+    bank = { ...findBankById(id, banks) };
     renderBankInfo(bank, refs);
   }
+  return;
 }
 
 export { onEditButton };
