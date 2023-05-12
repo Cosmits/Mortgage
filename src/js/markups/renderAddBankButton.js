@@ -1,4 +1,4 @@
-function renderNewBankButton(refs) {
+function renderAddBankButton(refs) {
 
   let svgIcon = `
     <svg class="bank-icon"  width="24" height="24">
@@ -11,9 +11,9 @@ function renderNewBankButton(refs) {
 
   refs.addBankBtn.insertAdjacentHTML('beforeend', svgIcon);
 
-  refs.banksListContainerEl.append(refs.addBankBtn);
+  refs.bottomContainerBtn.append(refs.addBankBtn);
 }
 
-export default renderNewBankButton;
+export default renderAddBankButton;
 
 
