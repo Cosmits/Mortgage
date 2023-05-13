@@ -7,7 +7,7 @@ function renderAddBankButton(refs) {
 
   refs.addBankBtn.insertAdjacentHTML('afterbegin', '<p>Add bank</p>');
   refs.addBankBtn.setAttribute('class', 'bank-items-btn');
-  refs.addBankBtn.classList.add('class', 'add-bank-btn');
+  refs.addBankBtn.classList.add('class', 'add-btn-shadow');
   refs.addBankBtn.setAttribute('type', 'button');
 
   refs.addBankBtn.insertAdjacentHTML('beforeend', svgIcon);

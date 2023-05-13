@@ -8,7 +8,7 @@ function renderClearBankButton(refs) {
 
   // refs.clearBankBtn.textContent = 'Clear'
   refs.clearBankBtn.insertAdjacentHTML('afterbegin', '<p>Clear</p>');
-  refs.clearBankBtn.classList.add('bank-items-btn', 'add-bank-btn');
+  refs.clearBankBtn.classList.add('bank-items-btn', 'add-btn-shadow');
   refs.clearBankBtn.classList.add('hidden');
   refs.clearBankBtn.setAttribute('type', 'button');
   refs.bottomContainerBtn.append(refs.clearBankBtn);
