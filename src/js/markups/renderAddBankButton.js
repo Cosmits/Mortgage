@@ -1,12 +1,13 @@
 function renderAddBankButton(refs) {
 
   let svgIcon = `
-    <svg class="bank-icon"  width="24" height="24">
-      <use href="./img/javascript.svg#icon-library" width="24" height="24"></use>
+    <svg class="bank-icon"  width="23" height="22">
+      <use href="./img/javascript.svg#icon-library" width="23" height="22"></use>
     </svg>`;
 
   refs.addBankBtn.insertAdjacentHTML('afterbegin', '<p>Add bank</p>');
   refs.addBankBtn.setAttribute('class', 'bank-items-btn');
+  refs.addBankBtn.classList.add('class', 'add-bank-btn');
   refs.addBankBtn.setAttribute('type', 'button');
 
   refs.addBankBtn.insertAdjacentHTML('beforeend', svgIcon);
