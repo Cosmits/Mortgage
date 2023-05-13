@@ -58,40 +58,30 @@
 
 .bank-items-btn {
   display: flex;
-  gap: 10px;
-  padding: 10px 15px;
+  gap: 5px;
+  padding: 8px;
+  align-items: center;
+  flex-direction: row-reverse;
 
   font-size: 10px;
   cursor: pointer;
   background-color: var(--main-background-color);
   border-radius: 4px;
-  font-size: 20px;
+  font-size: 18px;
   box-shadow: 5px 5px 5px var(--shadow-color);
   border: none;
-  letter-spacing: 4px;
-  color: var(--text-color);
-  text-shadow: 0 10px 10px var(--shadow-color);
-}
-
-.bank-add-btn {
-  padding: 10px 15px;
-  cursor: pointer;
-  background-color: var(--main-background-color);
-  border-radius: 4px;
-  font-size: 20px;
-  box-shadow: 5px 5px 5px var(--shadow-color);
-  border: none;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   color: var(--text-color);
   text-shadow: 0 10px 10px var(--shadow-color);
 }
 
 .bankItems,
-.bank-info-tex {
+.bank-info-text {
   list-style: none;
 
   display: flex;
-  gap: 20px;
+  /* gap: 70px; */
+  /* min-width: 388px; */
   margin-bottom: 10px;
   padding: 10px;
 
@@ -135,16 +125,16 @@
 }
 
 .changeBtn {
-  padding: 10px 15px;
+  padding: 8px;
   margin-left: 10px;
-  margin-top: 5px;
+
   cursor: pointer;
   background-color: var(--main-background-color);
   border-radius: 4px;
-  font-size: 20px;
+  font-size: 18px;
   box-shadow: 5px 5px 5px var(--shadow-color);
   border: none;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   color: var(--text-color);
   text-shadow: 0 10px 10px var(--shadow-color);
 }
@@ -215,8 +205,6 @@
   line-height: 24px;
   font-weight: 400;
   margin-bottom: 10px;
-  /* padding-left: 10px; */
-  /* padding-right: auto; */
 }
 
 .modal-input-wrap input {
@@ -262,7 +250,20 @@
   }
 
   .js-inputForFindBank {
+    margin-left: 10px;
+  }
+
+  .js-inputForFindBank {
     min-width: 406px;
+  }
+
+  .bankItems,
+  .bank-info-text {
+    min-width: 388px;
+  }
+
+  .bank-info-text {
+    min-width: auto;
   }
 
 }
