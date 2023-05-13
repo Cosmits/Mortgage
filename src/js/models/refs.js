@@ -11,5 +11,7 @@ export const refs = {
   bottomContainerBtn: document.createElement('div'),
   addBankBtn: document.createElement('button'),
   clearBankBtn: document.createElement('button'),
+
+  modalForm: document.createElement('div'),
   
 };

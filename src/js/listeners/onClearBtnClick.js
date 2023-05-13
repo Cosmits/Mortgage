@@ -7,14 +7,14 @@ import renderInputFindBank from '../markups/renderInputFindBank';
 
 function onClearButtonClick() {
 
-    refs.bankList.innerHTML = '';
-    refs.itemBankContainerEl.innerHTML = '';
-    refs.clearBankBtn.classList.add('hidden');
-    banks.splice(0, banks.length);
+  refs.bankList.innerHTML = '';
+  refs.itemBankContainerEl.innerHTML = '';
+  refs.clearBankBtn.classList.add('hidden');
+  banks.splice(0, banks.length);
 
-    setLocalStorage('Banks', banks);
+  setLocalStorage('Banks', banks);
 
-    renderInputFindBank(banks, refs);
+  renderInputFindBank(banks, refs);
 
 }
 
