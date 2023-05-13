@@ -26,7 +26,7 @@ function renderButtons(elem) {
 }
 
 function renderChangeButton() {
-  const arrayOfBankInfoText = document.querySelectorAll('.bank-info-tex');
+  const arrayOfBankInfoText = document.querySelectorAll('.bank-info-text');
   const keysForId = Object.keys(bank).slice(1);
   arrayOfBankInfoText.forEach((el, i) =>
     el.insertAdjacentHTML('beforeend', createButton(keysForId[i], 'Change'))
