@@ -11,7 +11,7 @@ function onSearchBankByName(event) {
   const str = event.target.value.trim();
   const strLength = str.length;
 
-  if (strLength > 2) {
+  if (strLength >= 2) {
     arr = findBankByName(str, banks);
   } else {
     arr = banks;

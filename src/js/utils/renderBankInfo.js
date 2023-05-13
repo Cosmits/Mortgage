@@ -1,7 +1,7 @@
-import bankInformation from '../markups/bankInfoMarkup';
+import bankInfoMarkup from '../markups/bankInfoMarkup';
 
 function renderBankInfo(bank, refs) {
-  const markup = bankInformation(bank);
+  const markup = bankInfoMarkup(bank);
   refs.itemBankContainerEl.innerHTML = markup;
 }
 
