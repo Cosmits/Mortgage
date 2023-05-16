@@ -1,6 +1,4 @@
-
 function addBankMarkup() {
-
   return `
      <div class="js-modal modal" data-modal="createNewBank">
       <button class="backdrop-modal-close js-close-modal" type="button" data-modal="close">
@@ -14,27 +12,27 @@ function addBankMarkup() {
       <form class="form" autocomplete="off">
         <div class="modal-input-wrap">
           <label for="bankName">Bank name</label>
-          <input type="text" name="bankName" required />
+          <input type="text" name="bankName" minlength="3" required />
         </div>
 
         <div class="modal-input-wrap">
           <label for="interestRate">Interest rate</label>
-          <input type="number" name="interestRate" required />
+          <input type="number" name="interestRate" min="5" max="50" required />
         </div>
         
         <div class="modal-input-wrap">
           <label for="maxLoan">Max loan</label>
-          <input type="number" name="maxLoan" required />
+          <input type="number" name="maxLoan" min="5000" max="450000" required />
         </div>
 
         <div class="modal-input-wrap">
           <label for="minPayment">Min payment</label>
-          <input type="number" name="minPayment" required />
+          <input type="number" name="minPayment" min="500" max="50000" required />
         </div>
 
         <div class="modal-input-wrap">
           <label for="loanTerm">Loan term</label>
-          <input type="number" name="loanTerm" required />
+          <input type="number" name="loanTerm" min="3" max="60" required />
         </div>
 
         <button class="bank-items-btn modal-add-btn" type="submit">
@@ -50,11 +48,9 @@ function addBankMarkup() {
     `;
 }
 
-function renderAddBankForms(refs){ 
-
-  refs.modalForm.id = "MyIdForModalForm";
+function renderAddBankForms(refs) {
+  refs.modalForm.id = 'MyIdForModalForm';
   refs.modalForm.innerHTML = addBankMarkup();
-
 }
 
 export default renderAddBankForms;
