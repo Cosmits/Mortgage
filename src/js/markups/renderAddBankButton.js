@@ -1,8 +1,8 @@
 function renderAddBankButton(refs) {
 
   let svgIcon = `
-    <svg class="bank-icon"  width="23" height="22">
-      <use href="./img/javascript.svg#icon-library" width="23" height="22"></use>
+    <svg class="bank-icon"  width="21" height="20">
+      <use href="./img/javascript.svg#icon-library" width="21" height="20"></use>
     </svg>`;
 
   refs.addBankBtn.insertAdjacentHTML('afterbegin', '<p>Add bank</p>');
