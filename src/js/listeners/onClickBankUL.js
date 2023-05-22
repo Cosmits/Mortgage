@@ -6,11 +6,6 @@ import renderBankInfo from '../utils/renderBankInfo';
 
 function onClickBankUL(e) {
   if (e.target.nodeName === 'UL') return;
-
-  // const id = e.target.closest('.bankItems').dataset.id;
-  // if (!bankItem) return;
-  // selectBank(bankItem);
-  // renderBankInfo(findBankById(id, banks), refs);
   const bankItem = e.target.closest('.bankItems');
   if (!bankItem) return;
 
