@@ -34,7 +34,7 @@ function renderChangeButton() {
 }
 
 function createButton(id, name) {
-  return `<button type="button" class="changeBtn" id="${id}">${name}</button>`;
+  return `<button type="button" class="changeBtn " id="${id}">${name}</button>`;
 }
 
 function bankInfoListener() {

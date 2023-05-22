@@ -37,8 +37,8 @@ function addBankMarkup() {
 
         <button class="bank-items-btn modal-add-btn" type="submit">
           <p>Add new bank</p>
-          <svg class="bank-icon"  width="24" height="24">
-            <use href="./img/javascript.svg#icon-library" width="24" height="24"></use>
+          <svg class="bank-icon"  width="24" height="22">
+            <use href="./img/javascript.svg#icon-library" width="24" height="22"></use>
           </svg>
         </button>
       </form>

@@ -1,7 +1,7 @@
 function renderClearBankButton(refs) {
   let svgIcon = `
-    <svg class="bank-icon"  width="23" height="24">
-      <use href="./img/javascript.svg#icon-bin2" width="23" height="20"></use>
+    <svg class="bank-icon"  width="20" height="18">
+      <use href="./img/javascript.svg#icon-bin2" width="20" height="18"></use>
     </svg>`;
 
   refs.clearBankBtn.insertAdjacentHTML('beforeend', svgIcon);
