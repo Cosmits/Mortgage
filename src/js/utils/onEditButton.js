@@ -21,10 +21,12 @@ function onEditButton(event) {
     event.target.closest('.bank-items-btn') !== null &&
     event.target.closest('.bank-items-btn').innerText === 'Edit'
   ) {
+    removeModal();
     id = event.target.closest('.bankItems').dataset.id;
     bank = { ...findBankById(id, banks) };
     bankInfoListener();
     renderChangeModal();
+  } else {
   }
 }
 
