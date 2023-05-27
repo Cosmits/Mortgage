@@ -1,4 +1,3 @@
-import { refs } from '../models/refs';
 import { banks } from '../models/banks';
 
 import { setLocalStorage } from '../utils/localStorage';
